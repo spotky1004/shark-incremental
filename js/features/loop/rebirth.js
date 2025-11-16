@@ -86,7 +86,7 @@ const REBIRTH = {
     calculateGlobalMult() {
         let x = E(1), y = { other : E(1) }
 
-        x = (y.base = Decimal(2 * (this.hasUpgrade(9) ? 1.5 : 1)).pow(player.rebirth.total)).mul(x)
+        x = (y.base = Decimal.pow(2 * (this.ahasUpgrade(9) ? 1.5 : 1), player.rebirth.total)).mul(x)
         x = (y.time = Decimal.div(86400, player.rebirth.best).sqrt().add(.5).max(1)).mul(x)
 
         y.other = x.div(y.base).div(y.time)
